@@ -1,6 +1,22 @@
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Dancing_Script} from "next/font/google"
+import { Header } from "./_components/Header";
+
+const DancingScript= Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing-script",
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,12 +40,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
+
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${DancingScript.variable}`}
       >
+        <Header/>
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
