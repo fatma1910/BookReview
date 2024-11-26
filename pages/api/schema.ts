@@ -1,4 +1,4 @@
-import {  integer, numeric, pgTable, serial, varchar } from "drizzle-orm/pg-core"; 
+import {  integer, numeric, pgTable, serial, text, varchar } from "drizzle-orm/pg-core"; 
 
 
 export const Book = pgTable ("book",{
@@ -7,7 +7,8 @@ export const Book = pgTable ("book",{
     author: varchar("author").notNull(),
     genre: varchar("genre").notNull(),
     description: varchar("description").notNull(),
-    image: varchar("image").notNull(),
+    imagePublicId: varchar('image_public_id', { length: 255 }), 
+    imageUrl: text('image_url'),
 } )
 
 export const Review = pgTable ('review',{
