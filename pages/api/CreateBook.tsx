@@ -13,7 +13,7 @@ cloudinary.config({
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
   if (req.method === "POST") {
     try {
-      const { title, author, genre, description, file } = req.body;
+      const { title, author, genre, description, file,id } = req.body;
 
       // Upload image to Cloudinary
       const uploadResult = await cloudinary.uploader.upload(file, {
