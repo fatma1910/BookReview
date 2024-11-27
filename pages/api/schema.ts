@@ -14,7 +14,7 @@ export const Book = pgTable ("book",{
 export const Review = pgTable ('review',{
     id: serial('id').primaryKey(),
     name: varchar('name').notNull(),
-    rate: numeric('rate').notNull(),
+    rate: numeric('rate', { precision: 5, scale: 2 }).notNull(),
     review: varchar('review').notNull(),
     budgetId: integer('budgetId').references(()=>Book.id),
 } )
