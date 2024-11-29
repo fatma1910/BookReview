@@ -53,9 +53,9 @@ const page = () => {
 
   return (
     <div>
-      <div className="flex justify-center">
-        <div className="max-w-[900px] mx-4 my-12 space-y-8">
-          <div className="flex justify-between flex-col gap-4 sm:flex-row">
+      <div className="place-self-center">
+        <div className="max-w-[1200px] mx-4 my-12 space-y-8 ">
+          <div className="flex justify-between flex-col gap-4 sm:flex-row ">
             <h1 className="text-3xl font-semibold">Books</h1>
             <div className="flex items-center justify-center">
               <Input
@@ -79,7 +79,7 @@ const page = () => {
               <p>No books found</p>
             </div>
           )}
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 items-center mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-4 items-center mx-auto">
             {filteredBooks.map((book) => (
               <Card key={book?.id}>
                 <CardHeader>
