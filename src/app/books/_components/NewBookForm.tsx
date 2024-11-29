@@ -79,11 +79,11 @@ const NewBookForm = ({ refreshData }: CreateBudgetProps) => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={setIsOpen} >
       <DialogTrigger asChild>
         <Button onClick={()=> { isSignedIn? () => setIsOpen(true) : router.push('/sign-in') }}>Add Book</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] max-w-[350px] rounded-md ">
         <DialogHeader>
           <DialogTitle>Add a new book</DialogTitle>
           <DialogDescription>
