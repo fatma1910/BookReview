@@ -22,10 +22,12 @@ export function Header() {
                     TheBookClub
                     </Link>
 
-                <Link href='/books' className=" md:text-2xl">Books</Link>
                 {
                     isSignedIn ? (
+                        <div>
                             <UserButton/>
+                        </div>
+                            
                         
                     ) : (
                         <Link href='/sign-in' >
